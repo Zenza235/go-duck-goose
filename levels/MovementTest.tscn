@@ -42,7 +42,7 @@ tile_data = PoolIntArray( 851989, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0
 position = Vector2( 373, 364 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
-rotating = true
 current = true
 process_mode = 0
 smoothing_enabled = true
+offset_v = -1.0
