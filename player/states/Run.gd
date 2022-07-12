@@ -2,9 +2,17 @@ extends PlayerState
 
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor():
+		player.curr_jumps -= 1
 		state_machine.transition_to("Fall")
 	
-	var move_dir: float = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	var move_dir = 0
+	if Input.is_action_pressed("move_left"):
+		move_dir = -1
+	elif Input.is_action_pressed("move_right"):
+		move_dir = 1
+	else:
+		state_machine.transition_to("Idle")
+
 	player.velocity.x = player.move_spd * move_dir
 	player.velocity.y = player.GRAVITY * delta
 

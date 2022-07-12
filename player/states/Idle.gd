@@ -5,6 +5,7 @@ func enter() -> void:
 
 func update(delta: float) -> void:
 	if not player.is_on_floor():
+		player.curr_jumps -= 1
 		state_machine.transition_to("Fall")
 
 	if Input.is_action_just_pressed("jump"):
