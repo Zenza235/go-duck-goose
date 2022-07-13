@@ -20,6 +20,7 @@ var velocity := Vector2.ZERO
 
 func _ready():
 	set_attr_to(bird)
+	curr_jumps = num_jumps
 	emit_signal("changed_bird", bird.name)
 
 func _input(event: InputEvent) -> void:
@@ -34,12 +35,10 @@ func switch_to(target_bird_name: String) -> void:
 	set_attr_to(bird)
 	emit_signal("changed_bird", bird.name)
 
-func set_attr_to(bird: Node) -> void:
-	self.gravity = bird.GRAVITY
-	self.move_spd = bird.MOVE_SPEED
-	self.air_spd = bird.AIR_SPEED
-	self.jump_spd = bird.JUMP_SPEED
-	
-	self.num_jumps = bird.NUM_JUMPS
-	self.curr_jumps = self.num_jumps
+func set_attr_to(b: Node) -> void:
+	self.gravity = b.GRAVITY
+	self.move_spd = b.MOVE_SPEED
+	self.air_spd = b.AIR_SPEED
+	self.jump_spd = b.JUMP_SPEED
+	self.num_jumps = b.NUM_JUMPS
 	
