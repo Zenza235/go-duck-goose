@@ -1,9 +1,11 @@
 extends PlayerState
 
+var may_jump = 0.5
+
 func enter() -> void:
 	player.velocity = Vector2.ZERO
 
-func update(delta: float) -> void:
+func update(delta: float) -> void:	
 	if not player.is_on_floor():
 		player.curr_jumps -= 1
 		state_machine.transition_to("Fall")

@@ -14,7 +14,7 @@ func physics_update(delta: float) -> void:
 		state_machine.transition_to("Idle")
 
 	player.velocity.x = player.move_spd * move_dir
-	player.velocity.y = player.GRAVITY * delta
+	player.velocity.y = player.gravity * delta
 
 	var snap_vec = player.transform.y * 8
 	player.velocity = player.move_and_slide_with_snap(player.velocity.rotated(player.rotation), snap_vec, -player.transform.y, true)

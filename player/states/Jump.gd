@@ -17,7 +17,7 @@ func physics_update(delta: float) -> void:
 		move_dir = 0
 	
 	player.velocity.x = player.air_spd * move_dir
-	player.velocity.y += player.GRAVITY * delta
+	player.velocity.y += player.gravity * delta
 
 	var snap_vec = Vector2.ZERO
 	player.velocity = player.move_and_slide_with_snap(player.velocity.rotated(player.rotation), snap_vec, -player.transform.y, true)
