@@ -29,6 +29,9 @@ func _input(event: InputEvent) -> void:
 			switch_to("Goose")
 		elif bird == $Goose:
 			switch_to("Duck")
+		
+		if self.is_on_floor():
+			curr_jumps = num_jumps
 
 func switch_to(target_bird_name: String) -> void:
 	bird = get_node(target_bird_name)
