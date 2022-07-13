@@ -75,7 +75,14 @@ offset_v = -1.0
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
-[connection signal="transitioned" from="Player/StateMachine" to="HUD/PlayerState" method="_on_state_transitioned"]
+[node name="CurrentState" parent="HUD" index="0"]
+text = "this should change"
+
+[node name="CurrentBird" parent="HUD" index="1"]
+text = "this should change too"
+
+[connection signal="changed_bird" from="Player" to="HUD/CurrentBird" method="_on_Player_changed_bird"]
+[connection signal="transitioned" from="Player/StateMachine" to="HUD/CurrentState" method="_on_StateMachine_transitioned"]
 
 [editable path="Player"]
 [editable path="HUD"]
