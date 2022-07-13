@@ -1,5 +1,9 @@
 extends PlayerState
 
+func update(delta: float) -> void:
+	if Input.is_action_just_pressed("jump"):
+		state_machine.transition_to("Jump")
+
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor():
 		player.curr_jumps -= 1
@@ -19,9 +23,6 @@ func physics_update(delta: float) -> void:
 	var snap_vec = player.transform.y * 8
 	player.velocity = player.move_and_slide_with_snap(player.velocity.rotated(player.rotation), snap_vec, -player.transform.y, true)
 	player.velocity = player.velocity.rotated(-player.rotation)
-
-	if Input.is_action_just_pressed("jump"):
-		state_machine.transition_to("Jump")
 	
-	elif is_equal_approx(move_dir, 0.0):
+	if is_equal_approx(move_dir, 0.0):
 		state_machine.transition_to("Idle")

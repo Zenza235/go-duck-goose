@@ -4,10 +4,11 @@ func enter() -> void:
 	player.curr_jumps -= 1
 	player.velocity.y = -player.jump_spd
 
-func physics_update(delta: float) -> void:
+func update(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and player.curr_jumps != 0:
 		state_machine.transition_to("Jump")
 
+func physics_update(delta: float) -> void:
 	var move_dir = 0
 	if Input.is_action_pressed("move_left"):
 		move_dir = -1
