@@ -6,8 +6,9 @@ signal changed_bird(bird_name)
 export var init_bird := NodePath()
 
 onready var bird = get_node(init_bird)
+onready var anim_player = get_node("AnimationPlayer")
 
-var gravity
+const GRAVITY = 2000
 
 var move_spd
 var air_spd
@@ -16,9 +17,14 @@ var jump_spd
 var num_jumps
 var curr_jumps
 
+var move_dir = 0
+var facing_right = true
+
 var velocity := Vector2.ZERO
 
 func _ready():
+	
+	
 	set_attr_to(bird)
 	curr_jumps = num_jumps
 	emit_signal("changed_bird", bird.name)
@@ -39,7 +45,6 @@ func switch_to(target_bird_name: String) -> void:
 	emit_signal("changed_bird", bird.name)
 
 func set_attr_to(b: Node) -> void:
-	self.gravity = b.GRAVITY
 	self.move_spd = b.MOVE_SPEED
 	self.air_spd = b.AIR_SPEED
 	self.jump_spd = b.JUMP_SPEED
