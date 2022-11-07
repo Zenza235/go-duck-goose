@@ -20,10 +20,12 @@ func physics_update(delta: float) -> void:
 	var move_dir = 0
 	move_dir = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	
-	if move_dir == 0:
-		state_machine.transition_to("Idle")
+	if move_dir < 0:
+		p.set_direction(p.DIRECTION_LEFT)
+	elif move_dir > 0:
+		p.set_direction(p.DIRECTION_RIGHT)
 
-	p.velocity.x = p.move_spd * move_dir
+	p.velocity.x = p.move_spd
 	p.velocity.y = p.GRAVITY * delta
 
 	var snap_vec = p.transform.y * 8

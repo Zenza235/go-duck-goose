@@ -5,7 +5,7 @@ func enter() -> void:
 	p.curr_jumps -= 1
 	p.velocity.y = -p.jump_spd
 	p.anim_player.play("duck_jump")
-	
+
 func update(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and p.curr_jumps != 0:
 		state_machine.transition_to("Jump")
@@ -14,7 +14,12 @@ func physics_update(delta: float) -> void:
 	var move_dir = 0
 	move_dir = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	
-	p.velocity.x = p.air_spd * move_dir
+	if move_dir < 0:
+		p.set_direction(p.DIRECTION_LEFT)
+	elif move_dir > 0:
+		p.set_direction(p.DIRECTION_RIGHT)
+	
+	p.velocity.x = p.air_spd
 	p.velocity.y += p.GRAVITY * delta
 
 	var snap_vec = Vector2.ZERO

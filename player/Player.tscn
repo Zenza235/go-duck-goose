@@ -10,11 +10,11 @@
 [ext_resource path="res://player/birds/Duck.gd" type="Script" id=8]
 [ext_resource path="res://player/birds/Goose.gd" type="Script" id=9]
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
 height = 27.0
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("DuckSprite:region_rect")
@@ -29,7 +29,7 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 16, 64, 48 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "duck_crouch"
 length = 0.1
 loop = true
@@ -46,7 +46,7 @@ tracks/0/keys = {
 "values": [ Rect2( 64, 16, 64, 48 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "duck_idle"
 length = 0.1
 loop = true
@@ -63,7 +63,7 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 16, 64, 48 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=5]
 resource_name = "duck_jump"
 length = 0.1
 loop = true
@@ -80,7 +80,7 @@ tracks/0/keys = {
 "values": [ Rect2( 64, 144, 64, 48 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "duck_jumpsquat"
 length = 0.3
 tracks/0/type = "value"
@@ -96,7 +96,7 @@ tracks/0/keys = {
 "values": [ Rect2( 128, 80, 64, 48 ), Rect2( 192, 80, 64, 48 ), Rect2( 0, 144, 64, 48 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 resource_name = "duck_land"
 length = 0.2
 tracks/0/type = "value"
@@ -112,8 +112,7 @@ tracks/0/keys = {
 "values": [ Rect2( 128, 144, 64, 48 ), Rect2( 192, 144, 64, 48 ) ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "duck_run"
+[sub_resource type="Animation" id=8]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -158,17 +157,17 @@ script = ExtResource( 7 )
 [node name="DuckSprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 16, 64, 48 )
+region_rect = Rect2( 128, 16, 64, 48 )
 
 [node name="DuckCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 6, 3.5 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 3 )
-anims/duck_crouch = SubResource( 4 )
-anims/duck_idle = SubResource( 5 )
-anims/duck_jump = SubResource( 9 )
-anims/duck_jumpsquat = SubResource( 8 )
-anims/duck_land = SubResource( 10 )
-anims/duck_run = SubResource( 7 )
+anims/RESET = SubResource( 2 )
+anims/duck_crouch = SubResource( 3 )
+anims/duck_idle = SubResource( 4 )
+anims/duck_jump = SubResource( 5 )
+anims/duck_jumpsquat = SubResource( 6 )
+anims/duck_land = SubResource( 7 )
+anims/duck_run = SubResource( 8 )
