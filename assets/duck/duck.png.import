@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/platform_tm.png-740119cd50e2de62cb3ecf4d88cb58af.stex"
+path="res://.import/duck.png-4e602b5559ba000a5324185e333725c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/platform_tm.png"
-dest_files=[ "res://.import/platform_tm.png-740119cd50e2de62cb3ecf4d88cb58af.stex" ]
+source_file="res://assets/duck/duck.png"
+dest_files=[ "res://.import/duck.png-4e602b5559ba000a5324185e333725c3.stex" ]
 
 [params]
 
