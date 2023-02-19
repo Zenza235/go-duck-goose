@@ -5,11 +5,11 @@ func update(delta: float) -> void:
 	if Input.is_action_pressed("crouch"):
 		state_machine.transition_to("Idle")
 		
-	else:
-		p.anim_player.play("duck_run")
+	#else:
+	#	p.anim_player.play("duck_run")
 	
 	if Input.is_action_just_pressed("jump"):
-		p.anim_player.play("duck_jumpsquat")
+	#	p.anim_player.play("duck_jumpsquat")
 		state_machine.transition_to("Jump")
 
 func physics_update(delta: float) -> void:

@@ -4,13 +4,13 @@ extends Node
 var state_machine = null
 
 func update(_delta: float) -> void:
-    pass
+	pass
 
 func physics_update(_delta: float) -> void:
-    pass
+	pass
 
 func enter() -> void:
-    pass
+	pass
 
 func exit() -> void:
-    pass
+	pass

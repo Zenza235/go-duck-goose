@@ -75,9 +75,6 @@ tile_data = PoolIntArray( 65524, 0, 3, 99, 0, 3, 131060, 0, 3, 65635, 0, 3, 1965
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 373, 364 )
 
-[node name="DuckSprite" parent="Player" index="3"]
-region_rect = Rect2( 0, 16, 64, 48 )
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
@@ -93,9 +90,9 @@ text = "this should change"
 
 [node name="CurrentBird" parent="HUD" index="1"]
 text = "this should change too"
-
 [connection signal="changed_bird" from="Player" to="HUD/CurrentBird" method="_on_Player_changed_bird"]
 [connection signal="transitioned" from="Player/StateMachine" to="HUD/CurrentState" method="_on_StateMachine_transitioned"]
 
 [editable path="Player"]
+
 [editable path="HUD"]
