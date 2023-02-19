@@ -2,6 +2,7 @@ class_name Player
 extends KinematicBody2D
 
 signal changed_bird(bird_name)
+signal updated_jump(num_jump)
 
 export var init_bird := NodePath()
 onready var curr_bird = get_node(init_bird)
@@ -43,3 +44,4 @@ func switch_to(target_bird_name: String) -> void:
 	self.num_jumps = curr_bird.NUM_JUMPS
 	
 	emit_signal("changed_bird", curr_bird.name)
+	emit_signal("updated_jump", num_jumps)

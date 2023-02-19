@@ -5,6 +5,8 @@ func enter() -> void:
 	p.curr_jumps -= 1
 	p.velocity.y = -p.jump_spd
 #	p.anim_player.play("duck_jump")
+	
+	emit_signal("updated_jump", p.curr_jumps)
 
 func update(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and p.curr_jumps != 0:
@@ -26,6 +28,7 @@ func physics_update(delta: float) -> void:
 		
 	if p.is_on_floor():
 		p.curr_jumps = p.num_jumps
+		emit_signal("jumped", p.curr_jumps)
 #		p.anim_player.play("duck_land")
 		if move_dir == 0:
 			state_machine.transition_to("Idle")
