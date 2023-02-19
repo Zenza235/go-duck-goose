@@ -5,7 +5,6 @@ signal changed_bird(bird_name)
 
 export var init_bird := NodePath()
 onready var curr_bird = get_node(init_bird)
-onready var anim_player = $AnimationPlayer
 
 const GRAVITY = 2000
 
