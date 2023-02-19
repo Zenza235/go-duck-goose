@@ -17,17 +17,17 @@ _global_script_classes=[ {
 "base": "State",
 "class": "PlayerState",
 "language": "GDScript",
-"path": "res://player/states/PlayerState.gd"
+"path": "res://player/states (deprecated)/PlayerState.gd"
 }, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://state_machine/State.gd"
+"path": "res://state_machine (deprecated)/State.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://state_machine/StateMachine.gd"
+"path": "res://state_machine (deprecated)/StateMachine.gd"
 } ]
 _global_script_class_icons={
 "Player": "",

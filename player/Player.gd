@@ -11,6 +11,7 @@ const GRAVITY = 2000
 
 # player movement
 var velocity := Vector2.ZERO
+var facing_right = true
 
 # player attributes
 var move_spd
@@ -21,9 +22,15 @@ var curr_jumps
 
 func _ready():
 	switch_to(init_bird)
-	curr_jumps = num_jumps
 
 func _input(event: InputEvent) -> void:
+	# running
+	var move_dir = 0
+	move_dir = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	
+	if move_dir > 0:
+		
+	
 	if event.is_action_pressed("switch"):
 		if curr_bird == $Duck:
 			switch_to("Goose")
@@ -32,7 +39,6 @@ func _input(event: InputEvent) -> void:
 		
 		if self.is_on_floor():
 			curr_jumps = num_jumps
-
 
 # stance change functions
 func switch_to(target_bird_name: String) -> void:
