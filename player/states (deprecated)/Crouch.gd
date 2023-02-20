@@ -1,3 +1,0 @@
-# crouch state 
-extends PlayerState
-
