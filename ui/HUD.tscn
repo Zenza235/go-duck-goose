@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://ui/CurrentJumps.gd" type="Script" id=1]
 [ext_resource path="res://ui/CurrentBird.gd" type="Script" id=2]
 
 [node name="HUD" type="CanvasLayer"]
@@ -12,4 +13,20 @@ margin_bottom = 14.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": true
+}
+
+[node name="CurrentJumps" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Velocity" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( -80, 43 )
+__meta__ = {
+"_edit_use_anchors_": false
 }
